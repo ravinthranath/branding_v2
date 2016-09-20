@@ -5,7 +5,7 @@
     #suiteBarLeft,  /*Suite Bar Left (SharePoint text and links) */
     #ms-help,  /* Help icon  */
     #fullscreenmodebox,  /* Focus on Content icon */
-    #siteIcon,  /* Image set as SharePoint site logo in Settings */
+    /* #siteIcon, //  Image set as SharePoint site logo in Settings */
     #pageTitle, /* Page title */
     #sideNavBox .ms-webpart-zone > div + div, /* Any web part after post category nav */
     .ms-core-listMenu-verticalBox ul.static .ms-blog-quickLinksTitle, /* Categories header in Blog category nav */
@@ -138,8 +138,8 @@
 	        
 	/*body .ms-bgColor-white, body .ms-bgc-w, body .ms-bgColor-white-hover:hover, body .ms-bgc-w-h:hover, body .ms-bgColor-white-focus:focus, body .ms-bgc-w-f:focus*/
 	/* Added Mizuho Logo */
-	.o365cs-nav-leftAlign {
-		background-image:url('/Style Library/Images/mizuho.png');
+	/*.o365cs-nav-leftAlign {
+		background-image:url('/Style%20Library/Mizuho.Branding/Images/mizuho-1.png');
 		background-repeat:no-repeat;
 	    display: inline-block !important;
 	    width: 148px;
@@ -151,60 +151,133 @@
 	    position: absolute;
 	    margin-top: 12px;
 	    margin-left: 12px;
-	}
+	}*/
 	.o365cs-nav-leftAlign > div {
 		display:none !important;
 	}
 	
 	/* PAGE MENU DESIGN 
 	--------------------------------------------*/
-	#titlerow {	background:#fff;     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);} /* Top menu bar */
+	/* For Seattle Master page */
+	/* Visible for Siteicon and Breadcrumb and Page Title */
 	#titlerow, #titleAreaBox, #titleAreaRow {
 		display: block !important;
 	}
-	#titlerow #titleAreaBox #titleAreaRow > div {
-		display:inline-block !important;	
+	#titleAreaBox #titleAreaRow > div {
+		display:block !important;	
 	}
-	#titlerow #titleAreaBox #titleAreaRow > div:first-child {
+	#s4-titlerow {	 
+		padding-bottom:0px !important; 
+		padding-top:0px !important; 
+		height:auto !important;
+	}
+	#titleAreaBox {
+		margin-left:0px;
+		margin-right:0px;
+	}
+	#titleAreaBox .ms-breadcrumb-top {
+		background:#fff; 
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+		padding-left:20px;
+		padding-right:20px;
+	}
+	#titleAreaRow .ms-breadcrumb-box .ms-core-pageTitle {
+		display:block
+	}
+	#titleAreaRow .ms-breadcrumb-box .ms-core-pageTitle {
+		margin-left: 40px;
+		margin-top: 25px;
+		font-size: 14pt;
+		margin-right:40px;
+	}
+	/* #titleAreaBox #titleAreaRow > div:first-child {
 		display:none !important;
+	} */
+	/* DYNAMIC CHANGE THE SITE LOGO
+	------------------------------------- */
+	#siteIcon {
+		height: inherit !important;
 	}
-	#titlerow #titleAreaBox #titleAreaRow .ms-breadcrumb-box{
+	#siteIcon #DeltaSiteLogo {
+		position: fixed;
+		display: inline-block !important;
+	    width: 150px;
+	    height: 50px;
+	    padding: 15px 8px 14px;
+	    top: 0;
+	    margin-left: 12px;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+	#siteIcon #DeltaSiteLogo .ms-siteicon-img {
+		width: 100% !important;
+	}
+	/* DYNAMIC HIDE REMOVED - TITLE, MENU and LOGO 
+	------------------------------------- */
+	#s4-titlerow {
+		display: block !important;
+	}
+	/* POPUP HEADER REMOVE 
+	------------------------------------- */
+	.ms-dialog #s4-titlerow, .ms-dlgContent .ms-dlgFrameContainer .ms-dialogHidden.s4-titlerowhidetitle {
+		display: none !important;
+	}
+
+	/* BREADCRUMB BOX DESIGN 
+	------------------------------------- */
+	#titleAreaBox #titleAreaRow .ms-breadcrumb-box{
 		padding-top:0px !important;	
 		height: inherit;
 	    padding-bottom: 0px !important;	
 	}
-	#titlerow #titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static > a {
+	#titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static > a {
 		padding: 16px 20px;
 	    margin-right: 0px;
 	    text-transform: uppercase;
 	    font-weight: 600;
-	    font-size: 14px;	
+	    font-size: 14px;
+		/* for Responsive */
+		float: left;	
 	}
-	#titlerow #titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static.ms-listMenu-editLink{
+	#titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static.ms-listMenu-editLink{
 		display:none !important;
 	}
-	#titlerow #titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static.selected > a {
-		background: #ebf0fe !important;
+	#titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static.selected > a {
+		background: #ebf0ff !important;
 	}
-	.ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected, .ms-core-header .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:link, .ms-core-header .ms-core-listMenu-horizontalBox a.ms-core-listMenu-item:hover {
-	color:#202088 !important;
+	#titleAreaBox #titleAreaRow .ms-breadcrumb-box li.static.selected > a span  {
+		color:#211f8a !important;
+
+	}
+	.ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:link, .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:visited, .ms-core-listMenu-horizontalBox .ms-core-listMenu-selected, .ms-tv-selected:link {
+		color:#211f8a !important;
+	}
+	.ms-core-listMenu-horizontalBox a.ms-core-listMenu-item:hover, .ms-core-listMenu-horizontalBox a.ms-core-listMenu-selected.ms-core-listMenu-item:hover, a.ms-tv-item:hover, a.ms-tv-header:hover {
+		color:#211f8a;
 	}
 	.ms-core-header .ms-core-listMenu-horizontalBox a.ms-core-listMenu-item:hover {
 		background: #ebf0fe !important;
 	}
-	
-	
-	#titlerow #titleAreaBox #titleAreaRow > div:last-child {
+	#titleAreaBox #titleAreaRow > div:last-child {
+		display:inline !important;
+	}
+	/* Menu Responsive Design
+	--------------------------------------------*/
+	.ms-core-listMenu-horizontalBox ul, .ms-core-listMenu-horizontalBox li, .ms-core-listMenu-horizontalBox .ms-core-listMenu-item, .ms-core-listMenu-horizontalBox > ul > li > table {
+		display: inline;
+	}
+
+	/* SEARCH BAR DESIGN
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	#DeltaPlaceHolderSearchArea {
 		position: fixed;
 	    top: 16px;
-	    right: 316px;
+	    right: 250px;
 	}
 	.ms-belltown-authenticated .ms-belltown-searcharea{
 		padding-top: 0;
 	}
-	
-	
-	/* Search bar design */
 	.ms-core-header .ms-srch-sb {
 		background:#1a1a6c !important;
 		border-color:#1a1a6c !important;
@@ -232,7 +305,7 @@
 	    top: 8px;
 	}	
 	.ms-srch-sb > .ms-srch-sb-searchLink {
-	    margin-left: -1px;
+	    margin-left: 3px;
 	    height: 20px;
 	    width: 20px;
 	    position: absolute;
@@ -243,33 +316,33 @@
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	 
 	/* Reduce height of area to minimum required */
-	    #suiteBar {
-	        height: auto;
-	    }
+	#suiteBar {
+		height: auto;
+	}
 	 
 	/* Ribbon background and border */
-	    .ms-cui-topBar2 {
-	        background: #2f2fa5;
-/*	        border-bottom: 1px solid #666;*/
-	    } 
-	    .ms-cui-topBar2,
-	    .ms-cui-topBar2.ms-browseTabContainer {
-	        border-bottom: 1px solid #202088;
-	    } 
-	  .ms-browseTab.ms-cui-tt-s > .ms-cui-tt-a > .ms-cui-tt-span, .ms-cui-tt-a > .ms-cui-tt-span {
+	.ms-cui-topBar2 {
+		background: #2f2fa5;
+		/* border-bottom: 1px solid #666;*/
+	} 
+	.ms-cui-topBar2,
+	.ms-cui-topBar2.ms-browseTabContainer {
+		border-bottom: 1px solid #202088;
+	} 
+	.ms-browseTab.ms-cui-tt-s > .ms-cui-tt-a > .ms-cui-tt-span, .ms-cui-tt-a > .ms-cui-tt-span {
 		color:#eaedf0 !important;
-	  }
+	}
 	 
 	/* Move Suite Bar Right (Sign In/Welcome/Site Actions) back to right side after hiding Suite Bar Left */
-	    #suiteBarRight {
-	        position: absolute; 
-	        right: 10px;
-	        background: transparent;  
-	        top: 3px;
-	        z-index: 2;
-	    }
+	#suiteBarRight {
+		position: absolute; 
+		right: 10px;
+		background: transparent;  
+		top: 3px;
+		z-index: 2;
+	}
 	    
-	 /* Root Home Page Design 
+	 /* Root Home Page Footer Design 
 	 --------------------------------------------------*/
 	 #DeltaPlaceHolderFooter{
 		float: left;
@@ -279,14 +352,14 @@
 	    z-index: 2;
 	    font-family: 'Lato', sans-serif;
 	}
-	 .mizuho-footer {
-        float: left;
-        width: 100%;
-        padding: 10px 0px;
-        background: #202088;
-        color: #fff;
-        font-family: 'Lato', sans-serif;
-    }
+	.mizuho-footer {
+		float: left;
+		width: 100%;
+		padding: 10px 0px;
+		background: #202088;
+		color: #fff;
+		font-family: 'Lato', sans-serif;
+	}
     .mizuho-footer .contentwrapper {
 	    margin-top: 0;
 	    margin-bottom: 0;
@@ -301,11 +374,11 @@
         vertical-align:top;
         min-width: 170px;
     }
-     .mizuho-footer .sep-address:first-child {
-        vertical-align:middle;
-        text-align:center;
-        min-width: 80px;
-    }
+	.mizuho-footer .sep-address:first-child {
+		vertical-align:middle;
+		text-align:center;
+		min-width: 80px;
+	}
     .mizuho-footer .sep-address h5 {
 		font-size: 12pt;
     	text-transform: capitalize;
@@ -335,26 +408,26 @@
         margin-bottom: 5px;
         color:rgba(255, 255, 255, 0.749019607843137);
     }
-    /* Subsite Home Page Design 
+    /* Subsite Home Page Footer Design 
 	 --------------------------------------------------*/
 	.mizuho-subsite-footer-top {
         position: relative;
+		text-align: center;
         border-bottom: 1px solid #353390;
     }
     .mizuho-subsite-footer-top ul {
-        padding-left: 130px;
+        padding-left: 0px;
         overflow: hidden;
         margin-top:0;
     }
-    
     .mizuho-subsite-footer-top li {
         list-style: none;
         position: relative;
         margin-right: 6px;
-        float: left;
+        float: none;
+		display: inline-block;
         overflow: hidden;
     }
-    
     .mizuho-subsite-footer-top li a {
         float: left;
         min-width: 205px;
@@ -367,8 +440,8 @@
         vertical-align: middle;
         box-sizing: border-box;
         text-decoration: none;
+		width: 120px;
     }
-
     .mizuho-subsite-footer-top li a:hover {
         background-color: #1a1a6c !important;
     }
@@ -383,7 +456,6 @@
     .mizuho-subsite-footer-top li:nth-child(7) a img {
         width: 34px;
     }
-
     .mizuho-subsite-footer-top li a p {
         display: table-cell;
         width: 100%;
@@ -391,58 +463,180 @@
         font-size: 10pt;
         padding-left: 10px;
         font-weight: 500;
+		text-align:left;
     }
     
     /* Set Minimum height to content part 
     ------------------------------------------ */
-    .contentwrapper #contentBox {
+    #s4-workspace #contentBox {
 	    min-height: 500px;
 	    display: block;
 	}
 	#ms-belltown-table{
 		padding-bottom:0;
 	}
+	/* Background Color SET To - #s4-workspace 
+    ------------------------------------------ */
+	#s4-workspace { background-color: #eaedf0 !important; }
+	
+	/*  Master Page Hide Sidebar Navigation 
+    ------------------------------------------ */
+    #sideNavBox { display:none !important; }
 
+    #SearchBox .ms-srch-sb-border{
+    	border: 0px;
+    	background: #1a1a6c;
+	}
+    #SearchBox .ms-srch-sb-border input:focus, #SearchBox .ms-srch-sb-border input:active, #SearchBox .ms-srch-sb-borderFocused{
+    	border: 0px;
+    	background: #1a1a6c;
+    }
+    #contentRow { margin-left:20px; margin-right:20px; }
+	
+    
+	/* Font Include
+    ------------------------------------------ */
+	.ms-core-navigation {
+		font-family: "Lato", sans-serif;
+		font-weight:400;
+	}
+	body, .ms-core-defaultFont, #pageStatusBar, .ms-status-msg, .js-callout-body {
+		font-family: "Lato", sans-serif;
+	}
+	h4, h5, h6, .ms-h4, .ms-h5, .ms-h6 {
+		font-family: "Lato", sans-serif;
+	}
+	.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item, .ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenuEdit, .ms-core-listMenu-heading, .ms-tv-header {
+		font-family: "Lato", sans-serif;
+	}
+	.ms-webpart-titleText.ms-webpart-titleText, .ms-webpart-titleText > a {
+		font-family: "Lato", sans-serif;
+	}
 
-/* Arun Styles Start */
-@media (min-width: 1900px) {
-    .mizuho-subsite-footer-top li a{
-        min-width: 205px;
-    }
-    .mizuho-footer .sep-address{
-        min-width: 170px;
-    }
-}
-@media (max-width: 1899px) {
-    .mizuho-subsite-footer-top li a{
-        min-width: auto;
-    }
-    .mizuho-subsite-footer-top ul{
-        text-align: center;
-        padding: 0px;
-    }
-    .mizuho-subsite-footer-top ul li{
-        float: none;
-        display: inline-block;
-        margin: 0px 5px;
-    }
-    .mizuho-footer .sep-address{
-        min-width: auto;
-    }
-}
-#authWrapper #s4-ribbonrow, #authWrapper #s4-ribbonrow #globalNavBox{
-    height: auto !important;
-}
-#s4-workspace{
-    z-index: 101; /* For the dropdown in top search bar */
-}
-body .ms-fcl-b{
-    color: #fff !important;
-}
-body .ms-bgc-nl{
-    background-color: #575757 !important;
-}
-.o365cs-nav-contextMenu .o365cs-labelledContextMenuSeparator{
-    padding: 10px 16px !important;
-}
-/* Arun Styles End */
+	/* Mizuho Font Guidence
+	------------------------------------------ */
+	/*nav - lato regular / All Caps / 12pt
+	nav dropdown - lato regular  / 14pt
+	Left nav - lato regular  13pt
+	Left nav sub - lato light 13pt
+	widget header - lato Light / 14pt
+	footer - Lato Regular / 12pt
+	lato light / 10pt
+	links Lato Regular / 12pt */
+
+	/* WEBPART ZONE AND WEBPART STYLES fo Content Box
+	------------------------------------------ */
+	#contentBox { /* for main site */
+		margin-left:20px; margin-right:20px;
+	}
+	#contentBox .ms-rte-layoutszone-outer .ms-webpartzone-cell {
+	}
+	#contentBox .ms-rte-layoutszone-outer .ms-webpartzone-cell .ms-wpContentDivSpace {
+		padding:15px;
+		box-sizing:border-box;
+		background: #fff;
+		box-shadow: 0px 2px 2px 0px #ccc;
+		border-top:2px solid #365d9f;
+	}
+	#contentBox .ms-rte-layoutszone-outer .ms-webpartzone-cell .ms-webpart-chrome-title{
+		margin-bottom:-4px;
+	}
+	#contentBox .ms-rte-layoutszone-outer .ms-webpartzone-cell .ms-webpart-chrome-title h2.ms-webpart-titleText {
+		background: #365d9f;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		text-transform: uppercase;
+		font-size: 12pt;
+		font-weight: 300;
+		padding:5px 8px;
+		float:left;
+	}
+	#contentBox .ms-rte-layoutszone-outer .ms-webpartzone-cell .ms-webpart-chrome-title h2.ms-webpart-titleText a {
+		text-decoration: none;
+		color: #fff;
+	}
+	/* POPUP ISSUE FIXED 
+	------------------------------------- */
+	.ms-dialog #contentBox {
+		margin-left: 0px;
+	}
+	.ms-dialog #s4-workspace #contentBox {
+	    min-height:inherit;
+	    display: block;
+	}
+
+	/* EXTRA
+	------------------------------------- */
+	#authWrapper #s4-ribbonrow, #authWrapper #s4-ribbonrow #globalNavBox{
+		height: auto !important;
+	}
+	#s4-workspace{
+		z-index: 101; /* For the dropdown in top search bar */
+	}
+	body .ms-fcl-b{
+		color: #fff !important;
+	}
+	body .ms-bgc-nl{
+		background-color: #575757 !important;
+	}
+	.o365cs-nav-contextMenu .o365cs-labelledContextMenuSeparator{
+		padding: 10px 16px !important;
+	}
+	/* Site Settings Page style
+	------------------------------------*/
+	#ctl00_PlaceHolderMain_SettingLinksV4{
+		width: 100%;
+	}
+	.ms-linksection-columnBox table{
+		width: 100%;
+	}
+	/*.ms-linksection-columnBox{
+		padding: 0px 0px 0px 20px;
+	}*/
+	.ms-linksection-textCell h3{
+		float: left;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		background: #365d9f;
+		margin: 0px;
+		padding: 3px 10px;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 13px;
+		font-weight: bold;
+	}
+	.ms-linksection-textCell ul{
+		float: left;
+		width: 100%;
+		background: #fff;
+		border-top: 2px solid #365d9f;
+		box-shadow: 0px 2px 2px 0px #ccc;
+		padding: 15px;
+		box-sizing: border-box;
+	}
+
+	@media (min-width: 1900px) {
+		.mizuho-subsite-footer-top li a{
+			min-width: 205px;
+		}
+		.mizuho-footer .sep-address{
+			min-width: 170px;
+		}
+	}
+	@media (max-width: 1899px) {
+		.mizuho-subsite-footer-top li a{
+			min-width: auto;
+		}
+		.mizuho-subsite-footer-top ul{
+			text-align: center;
+			padding: 0px;
+		}
+		.mizuho-subsite-footer-top ul li{
+			float: none;
+			display: inline-block;
+			margin: 0px 5px;
+		}
+		.mizuho-footer .sep-address{
+			min-width: auto;
+		}
+	}
